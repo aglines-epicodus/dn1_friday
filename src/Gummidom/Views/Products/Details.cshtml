@@ -1,0 +1,16 @@
+﻿@model Gummidom.Models.Product
+
+<html>
+<head>
+    <title>Gummidom - Product Details</title>
+</head>
+<body>
+    <h2>Details line in body</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+    @Html.DisplayNameFor(model => model.Cost): @Html.DisplayFor(model => model.Cost)
+    @Html.DisplayNameFor(model => model.CountryOfOrigin): @Html.DisplayFor(model => model.CountryOfOrigin)
+
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model  Gummidom.Models.Product
+
+<html>
+<head>
+    <title>Gummidom Products - Create</title>
+</head>
+<body>
+    <h2>Create</h2>
+    <hr />
+    <h4>Add a new product</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+
+        @Html.LabelFor(model => model.Cost)
+        @Html.TextBoxFor(model => model.Cost)
+
+        @Html.LabelFor(model => model.CountryOfOrigin)
+        @Html.TextBoxFor(model => model.CountryOfOrigin)
+       
+    }
+
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+    <p>@Html.ActionLink("Add new item", "Create")</p>
+</body>
+</html>
