@@ -1,0 +1,23 @@
+﻿@model Gummidom.Models.Product
+
+<html>
+<head>
+    <title>Product - Edit</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <hr />
+    <h4>Edit this product : @Html.DisplayFor(model => model.Name)</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.ProductId)
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+
+
+        <input type="submit" value="Save" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+
+</body>
+</html>
