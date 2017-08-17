@@ -3,14 +3,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <script src="bootstrap.min.js"></script>
-    <link rel="stylesheet" href="bootstrap-theme.min.css" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div class="container-fluid">
+        <div class="jumbotron-fluid"
         @RenderBody()
+            </div>
     </div>
 </body>
 </html>
