@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -16,6 +17,7 @@ namespace Gummidom
     public class Startup
     {
 
+        public IConfigurationRoot Configuration { get; set; }
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -23,20 +25,20 @@ namespace Gummidom
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+        
 
-            if (env.IsDevelopment())
-            {
-                builder.AddApplicationInsightsSettings(developerMode: true);
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    builder.AddApplicationInsightsSettings(developerMode: true);
+            //}
             Configuration = builder.Build();
         }
-        public IConfigurationRoot Configuration { get; set; }
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddMvc();
+            //services.AddApplicationInsightsTelemetry(Configuration);
+
 
             services.AddEntityFramework().AddDbContext<GummidomContext>(options => 
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
@@ -45,6 +47,8 @@ namespace Gummidom
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseStaticFiles();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -52,30 +56,29 @@ namespace Gummidom
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.Run(async (context) =>
-            {
-                //await context.Response.WriteAsync("hello world");
-            });
 
+            loggerFactory.AddConsole();
 
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddDebug();
 
-            app.UseApplicationInsightsRequestTelemetry();
+            //app.UseApplicationInsightsRequestTelemetry();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                //app.UseBrowserLink();
             }
-            else
+            //else
+            //{
+            //    app.UseExceptionHandler("/Home/Error");
+            //}
+
+            app.Run(async (context) =>
             {
-                app.UseExceptionHandler("/Home/Error");
-            }
+                await context.Response.WriteAsync("hello world");
+            });
 
-            app.UseApplicationInsightsExceptionTelemetry();
-
-            app.UseStaticFiles();
 
         }
     }

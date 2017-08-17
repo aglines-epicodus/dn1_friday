@@ -1,22 +1,19 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Gummibear Kingdom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 @model IEnumerable<Gummidom.Models.Product>
 
-<html>
-<head>
-    <title>Gummi Title</title>
-</head>
-<body>
-    <h2>Gummi body</h2>
-    <h4>@Html.DisplayNameFor(model => model.Name)</h4>
-    <ul>
-        @foreach (var listProduct in Model)
-        {
-            <li>
-            @Html.DisplayFor(modelProduct => listProduct.Name)
-            @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId })
-            </li>
-        }
-    </ul>
-</body>
-</html>
-
+<h2>Gummibear Kingdom</h2>
+<hr />
+<h4>@Html.DisplayNameFor(model => model.Name)</h4>
+<ul>
+    @foreach (var listProduct in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listProduct.Name) | 
+        @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) | 
+        @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) | 
+        @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })</li>
+    }
+</ul>
+<p>@Html.ActionLink("Add new item", "Create")</p>

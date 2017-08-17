@@ -11,10 +11,10 @@ namespace Gummidom.Models
 
     {
 
-        public GummidomContext()
-        {
+        //public GummidomContext()
+        //{
 
-        }
+        //}
 
         public virtual DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -22,14 +22,14 @@ namespace Gummidom.Models
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Gummidom;integrated security=True");
         }
 
-        public GummidomContext(DbContextOptions<GummidomContext> options)
-            : base(options)
-        {
-        }
+        //public GummidomContext(DbContextOptions<GummidomContext> options)
+        //    : base(options)
+        //{
+        //}
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    base.OnModelCreating(builder);
+        //}
     }
 }
