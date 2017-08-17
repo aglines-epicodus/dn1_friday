@@ -19,10 +19,11 @@
 
         @Html.LabelFor(model => model.CountryOfOrigin)
         @Html.TextBoxFor(model => model.CountryOfOrigin)
-       
+
+        <input type="submit" value="Add this product" />       
     }
 
     <p>@Html.ActionLink("Back to list", "Index")</p>
-    <p>@Html.ActionLink("Add new product", "Create")</p>
+
 </body>
 </html>
