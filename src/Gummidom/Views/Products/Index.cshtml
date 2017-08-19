@@ -1,19 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Gummibear Kingdom";
+    ViewData["Title"] = "GUMMIDOM";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model IEnumerable<Gummidom.Models.Product>
 
-<h2>Gummibear Kingdom</h2>
+
 <hr />
-<h4>@Html.DisplayNameFor(model => model.Name)</h4>
+@*<h4>@Html.DisplayNameFor(model => model.Name)</h4>*@
+@*Commented out the above which was rendering what looks like mustvebn the column name "Name"*@
+<div class="alert alert-success">
+    <h2>Product List</h2>
+</div>
+
 <ul>
     @foreach (var listProduct in Model)
     {
-        <li>@Html.DisplayFor(modelItem => listProduct.Name) | 
+
+        <li>
+        <div class="alert alert-info">
+         @Html.DisplayFor(modelItem => listProduct.Name) | 
         @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) | 
         @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) | 
-        @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })</li>
+        @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })</div></li>
     }
 </ul>
-<p>@Html.ActionLink("Add new item", "Create")</p>
+
+<div class="alert alert-dismissable">@Html.ActionLink("Add new item", "Create")</div>

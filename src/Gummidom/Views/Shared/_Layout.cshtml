@@ -3,14 +3,19 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>@ViewBag.Title</title>
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="jumbotron-fluid"
-        @RenderBody()
-            </div>
+<body>    
+
+
+    <div style="height:130px;background-image:url('/images/Gummy_bears.jpg'); background-size:cover;">
+        <h1>Gummibear Kingdom</h1>
     </div>
+
+    
+        @RenderBody()
+          
+
 </body>
 </html>

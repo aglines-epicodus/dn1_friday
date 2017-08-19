@@ -6,10 +6,17 @@
 
 <html>
 <head>
-    Delete page
+    <title>GUMMIDOM</title>
 </head>
 <body>
+
+    <div class="alert alert-danger">
+        <h2>Delete Product</h2>
+    </div>
+
+
     <h2>Sure you want to delete?</h2>
+
     <hr />
     @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
     @using (Html.BeginForm())

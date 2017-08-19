@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Gummibear Kingdom";
+    ViewData["Title"] = "Gummidom";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model  Gummidom.Models.Product
@@ -13,19 +13,22 @@
     <hr />
     <h4>Add a new product</h4>
 
-    @using (Html.BeginForm())
-    {
-        @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)
 
-        @Html.LabelFor(model => model.Cost)
-        @Html.TextBoxFor(model => model.Cost)
+    <div class="form-group">
+        @using (Html.BeginForm())
+        {   
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name)
 
-        @Html.LabelFor(model => model.CountryOfOrigin)
-        @Html.TextBoxFor(model => model.CountryOfOrigin)
+            @Html.LabelFor(model => model.Cost)
+            @Html.TextBoxFor(model => model.Cost)
 
-        <input type="submit" value="Add this product" />       
-    }
+            @Html.LabelFor(model => model.CountryOfOrigin)
+            @Html.TextBoxFor(model => model.CountryOfOrigin)
+
+            <input type="submit" value="Add this product" />       
+        }
+        </div>
 
     <p>@Html.ActionLink("Back to list", "Index")</p>
 

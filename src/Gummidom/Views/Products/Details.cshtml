@@ -6,13 +6,18 @@
 
 <html>
 <head>
-    <title>Product Details</title>
+    <title>GUMMIDOM</title>
 </head>
 <body>
-    <h2>Details line in body</h2>
+
+    <div class="alert alert-success">
+        <h2>Product Detail</h2>
+    </div>
+
+
     <hr />
-    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-    @Html.DisplayNameFor(model => model.Cost): @Html.DisplayFor(model => model.Cost)
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) | 
+    @Html.DisplayNameFor(model => model.Cost): @Html.DisplayFor(model => model.Cost) | 
     @Html.DisplayNameFor(model => model.CountryOfOrigin): @Html.DisplayFor(model => model.CountryOfOrigin)
 
     <p>@Html.ActionLink("Back to list", "Index")</p>
