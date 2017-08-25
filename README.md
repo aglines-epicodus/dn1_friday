@@ -4,11 +4,12 @@
 
 | Behavior | Results |
 |---|---|
-| View all products | one page to show all |
-| Produc`t details view | one page to show details of a specific product |
-| Edit product | single page with places to edit different parts of the product |
-| Remove product | when a product is being retired, one page to verify product removal |
-| Product | Name, Cost, Country of Origin |
+| View | Name, Cost, Country of Origin |
+| Create | create a new product |
+| View all| one page to show all |
+| Edit  | single page with places to edit different parts of the product |
+| Remove | when a product is being retired, one page to verify product removal |
+| Details view | details of a specific product |
 
 <hr>
 
