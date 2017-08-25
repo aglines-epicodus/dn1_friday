@@ -17,7 +17,7 @@
 
 Download from the [repo](https://github.com/GrapeSalad/GB-Kingdom)
 
-Open Viual Studio 2015 and choose the Open Project option.
+Open Visual Studio and choose the Open Project option.
 
 Navigate to the directory in which you downloaded the repo and open the project file.
 
